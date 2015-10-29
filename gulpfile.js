@@ -12,5 +12,7 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass('bootstrap.scss', 'unal/css');
+	mix.styles(['unal/css/bootstrap.css', 'node_modules/sweetalert/dist/sweetalert.css'], 'unal/build/css', '.');
+	mix.scripts(['bower_components/jquery/dist/jquery.min.js','node_modules/sweetalert/dist/sweetalert.min.js'], 'unal/build/js', '.');
 });

@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+	return redirect('/pedido/create');
+});
+
+Route::resource('pedido', 'PedidosController');
+
+Route::group(['prefix' => 'api'], function(){
+	Route::get('pedidos','PedidosController@apiIndex');
+	Route::post('pedidos','PedidosController@apiUpdate');
 });
