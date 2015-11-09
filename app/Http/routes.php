@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-	return redirect('/pedido/create');
+	return view('pages.home');
 });
 
 Route::resource('pedido', 'PedidosController');

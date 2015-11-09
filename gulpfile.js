@@ -11,8 +11,44 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('bootstrap.scss', 'tienda/css');
-	mix.styles(['tienda/css/bootstrap.css', 'node_modules/sweetalert/dist/sweetalert.css'], 'tienda/build/css', '.');
-	mix.scripts(['bower_components/jquery/dist/jquery.min.js','node_modules/sweetalert/dist/sweetalert.min.js'], 'tienda/build/js', '.');
+elixir(function (mix) {
+
+	mix.sass('bootstrap.scss', 'tienda/css');
+
+	mix.styles([
+
+		'tienda/css/bootstrap.css',
+		'tienda/css/font-awesome.css',
+		'tienda/css/animate.min.css',
+		'tienda/css/main-template.css',
+		'tienda/css/owl.carousel.css',
+		'tienda/css/owl.theme.css',
+		'tienda/css/responsive.css',
+		'tienda/css/typography.css',
+		'node_modules/sweetalert/dist/sweetalert.css'
+
+	], 'tienda/build/css', '.');
+
+	mix.scripts([
+
+		'tienda/js/vendor/modernizr-2.8.3.min.js',
+		'tienda/js/queryloader2.min.js',
+		'bower_components/jquery/dist/jquery.min.js',
+		'tienda/js/vendor/jquery-migrate-1.2.1.min.js',
+		'tienda/js/vendor/bootstrap.min.js',
+		'tienda/js/wow.min.js',
+		'node_modules/sweetalert/dist/sweetalert.min.js',
+		'tienda/js/jquery.appear.js',
+		'tienda/js/jquery.easing.min.js',
+		'tienda/js/imagesloaded.pkgd.min.js',
+		'tienda/js/jquery.circliful.min.js',
+		'tienda/js/isotope.pkgd.min.js',
+		'tienda/js/nivo-lightbox.min.js',
+		'tienda/js/owl.carousel.min.js',
+		//'tienda/js/main-slideshow.js',
+		'tienda/js/waypoint.js',
+		'tienda/js/main.js'
+
+	], 'tienda/build/js', '.');
+
 });
