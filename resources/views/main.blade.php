@@ -13,7 +13,7 @@
 
 @yield('content')
 
-@yield('footer')
+@include('partials.footer')
 
 <script type="text/javascript" src="{{ asset('build/js/all.js') }}"></script>
 
