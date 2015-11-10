@@ -44,10 +44,9 @@ elixir(function (mix) {
 		'tienda/js/jquery.easing.min.js',
 		'tienda/js/imagesloaded.pkgd.min.js',
 		'tienda/js/isotope.pkgd.min.js',
-		'tienda/js/nivo-lightbox.min.js',
 		'tienda/js/owl.carousel.min.js',
 		'tienda/js/waypoint.js',
-		//'tienda/js/main.js',
+		'tienda/js/modules/alertsController.js',
 		'tienda/js/main.js'
 
 	], 'tienda/build/js', '.');
