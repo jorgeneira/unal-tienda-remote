@@ -7,7 +7,7 @@
             </h2>
 
             <div class="col-md-10 col-md-offset-1">
-                <p>Cotiza con nosotros a través de un diseño precargado o creando tu cuarto frio o cina integral a tu medida.</p>
+                <p>Elige entre nuestros modelos de cocinas y cuartos frios prediseñados o solicita el tuyo a tu medida y de acuerdo a tus requerimientos.</p>
             </div>
         </div> <!-- *** end row *** -->
 
