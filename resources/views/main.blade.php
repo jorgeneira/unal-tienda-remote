@@ -3,9 +3,10 @@
 <head>
     <title>ADS | Auto Design Solutions</title>
     <link rel="stylesheet" href="{{ asset('build/css/all.css') }}">
+    <script type="text/javascript" src="{{ asset('build/js/all.js') }}"></script>
 
 </head>
-<body>
+<body class="@yield('bodyClass')">
 
 @include('partials.mobileMenu')
 
@@ -15,7 +16,6 @@
 
 @include('partials.footer')
 
-<script type="text/javascript" src="{{ asset('build/js/all.js') }}"></script>
 
 @include('partials.globalSharedScripts')
 

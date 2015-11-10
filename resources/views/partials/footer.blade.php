@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <figure class="margin-bottom-medium">
-                     <img title="Auto Design Solutions" src="img/logo.png" class="footer-logo" alt="Krefolio" style="padding-top: -20px; margin-top: -20px;">
+                     <img title="Auto Design Solutions" src="img/logo.png" class="footer-logo" alt="Auto Design Solutions" style="padding-top: -20px; margin-top: -20px;">
                 </figure>
                 <p class="margin-bottom-medium">Auto Design Solutions es parte del proyecto final de la clase <strong>Computacion Gráfica</strong> de la Univerdad Nacional de Colombia, presentado en el segundo semestre de 2015. El sistema fue creado con fines puramente académicos y no constituye un servicio disponible al público en general.</p>
 

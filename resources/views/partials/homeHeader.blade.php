@@ -12,7 +12,7 @@
 
             <!-- *****  Logo ***** -->
             <div class="logo-container">
-                <a href="#">
+                <a href="#" title="Auto Design Solutions">
                     <img src="img/logo.png" style="height: 80px;" />
                 </a>
             </div>
