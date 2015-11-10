@@ -13,7 +13,8 @@
 
 Route::get('/','HomeController@index');
 
-Route::resource('pedido', 'PedidosController');
+Route::get('cocinas-a-medida', 'CocinasController@create');
+Route::get('cuartos-frios-a-medida', 'CuartosController@create');
 
 Route::group(['prefix' => 'api'], function(){
 	Route::get('pedidos','PedidosController@apiIndex');

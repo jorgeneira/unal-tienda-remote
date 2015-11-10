@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class CuartosController extends Controller {
+
+	public function create() {
+
+		$catalogo = [
+			[
+				'type' => 'cocina',
+			],
+			[
+				'type' => 'cuarto',
+			],
+			[
+				'type' => 'cocina',
+			],
+			[
+				'type' => 'cuarto',
+			],
+			[
+				'type' => 'cocina',
+			],
+			[
+				'type' => 'cuarto',
+			],
+			[
+				'type' => 'cocina',
+			],
+			[
+				'type' => 'cuarto',
+			],
+		];
+
+
+		return view('pages.cuartosCreate', compact('catalogo'));
+
+	}
+
+}
