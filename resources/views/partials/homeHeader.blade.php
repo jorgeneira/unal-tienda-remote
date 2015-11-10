@@ -9,14 +9,14 @@
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
-            {{--
+
             <!-- *****  Logo ***** -->
             <div class="logo-container">
                 <a href="#">
-                    <img src="img/main-logo.jpg" style="height: 80px;" />
+                    <img src="img/logo.png" style="height: 80px;" />
                 </a>
             </div>
-            --}}
+
             <!-- =========================
                    Header item 1
                 ============================== -->

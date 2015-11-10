@@ -15,6 +15,8 @@ elixir(function (mix) {
 
 	mix.sass('bootstrap.scss', 'tienda/css');
 
+	mix.less('custom.less', 'tienda/css');
+
 	mix.styles([
 
 		'tienda/css/bootstrap.css',
@@ -25,6 +27,7 @@ elixir(function (mix) {
 		'tienda/css/owl.theme.css',
 		'tienda/css/responsive.css',
 		'tienda/css/typography.css',
+		'tienda/css/custom.css',
 		'node_modules/sweetalert/dist/sweetalert.css'
 
 	], 'tienda/build/css', '.');
