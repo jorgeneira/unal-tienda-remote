@@ -7,7 +7,7 @@
             </h2>
 
             <div class="col-md-10 col-md-offset-1">
-                <p>Elige entre nuestros modelos de cocinas y cuartos frios prediseñados o solicita el tuyo a tu medida y de acuerdo a tus requerimientos.</p>
+                <p>Elige entre nuestros modelos de cocinas y cuartos frios prediseñados o solicita el tuyo a tu medida y de acuerdo a tus necesidades.</p>
             </div>
         </div> <!-- *** end row *** -->
 
