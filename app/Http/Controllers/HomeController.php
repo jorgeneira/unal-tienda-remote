@@ -10,34 +10,8 @@ class HomeController extends Controller {
 
 	public function index() {
 
-		$catalogo = [
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-		];
 
-		return view('pages.home', compact('catalogo'));
+		return view('pages.home');
 
 	}
 

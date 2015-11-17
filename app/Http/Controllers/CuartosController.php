@@ -10,35 +10,10 @@ class CuartosController extends Controller {
 
 	public function create() {
 
-		$catalogo = [
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-			[
-				'type' => 'cocina',
-			],
-			[
-				'type' => 'cuarto',
-			],
-		];
 
 
-		return view('pages.cuartosCreate', compact('catalogo'));
+
+		return view('pages.cuartosCreate');
 
 	}
 
