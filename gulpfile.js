@@ -27,6 +27,7 @@ elixir(function (mix) {
 		'tienda/css/owl.theme.css',
 		'tienda/css/responsive.css',
 		'tienda/css/typography.css',
+		'tienda/css/jquery.bootstrap-touchspin.min.css',
 		'tienda/css/custom.css',
 		'node_modules/sweetalert/dist/sweetalert.css'
 
@@ -38,6 +39,7 @@ elixir(function (mix) {
 		'tienda/js/queryloader2.min.js',
 		'bower_components/jquery/dist/jquery.min.js',
 		'tienda/js/vendor/bootstrap.min.js',
+		'tienda/js/jquery.bootstrap-touchspin.min.js',
 		'tienda/js/wow.min.js',
 		'node_modules/sweetalert/dist/sweetalert.min.js',
 		'tienda/js/jquery.appear.js',

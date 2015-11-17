@@ -34,7 +34,7 @@
                                 <a href="#portfolio" class="button pull-right internal-link bold-text light hvr-grow" data-rel="#portfolio">CATALOGO</a>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
-                                <a href="#about-us" class="button pull-left internal-link bold-text main-bg hvr-grow" data-rel="#about-us">A TU MEDIDA</a>
+                                <a href="/cuartos-frios-a-medida" class="button pull-left internal-link bold-text main-bg hvr-grow" data-rel="#about-us">A TU MEDIDA</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>

@@ -1,11 +1,90 @@
+@innerHeaderHeight: 50px;
+
+@logoBlue: #00B5E4;
+@logoGray: #7A7A7A;
+@logoOrange: #FF5E00;
+
+.no-margin {
+    margin: 0 !important;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.logoBlue{
+    color: @logoBlue;
+}
+.logoGray{
+    color: @logoGray;
+}
+.logoOrange{
+    color: @logoOrange;
+}
+.styledBackground(@opacity){
+    background: rgba(0, 0, 0, @opacity);
+    border: 1px solid #000;
+    padding: 10px;
+    box-shadow: 2px 2px 6px 0 rgba(0, 1, 0, 0.75);
+}
 #header {
     .logo-container {
-        background: rgba(0, 0, 0, 0.15);
-        border: 1px solid #000;
-        padding: 10px;
-        box-shadow: 2px 2px 6px 0 rgba(0, 1, 0, 0.75);
+        .styledBackground(0.15);
     }
 }
-.blackBackground{
+.blackBackground {
     background: #000000;
+}
+.formulario{
+    position: relative;
+    & > .container{
+        .styledBackground(0.5);
+        position: relative;
+        z-index:100;
+    }
+    label{
+        color: #DBDBDB;
+    }
+}
+.formulario-cuarto{
+    background-image:url('/img/slider/slider-1.jpg');
+
+}
+#headerMenu{
+    line-height:30px;
+    .active {
+        a{
+            color: #FFF;
+            background: @logoOrange!important;
+        }
+    }
+    a {
+        border-radius: 0;
+        color: #BCBCBC;
+        &:hover{
+            background: @logoBlue;
+            color: #333;
+        }
+    }
+
+}
+#innerHeaderWrap {
+    background: #333;
+
+    #innerHeader {
+        height: @innerHeaderHeight;
+        line-height: @innerHeaderHeight;
+    }
+
+    .logo-container {
+        a {
+            display: block;
+            img {
+                height: @innerHeaderHeight - 10px;
+            }
+            span {
+                font-family: "Campton Bold", sans-serif;
+                line-height:10px;
+                text-decoration: underline;
+            }
+        }
+    }
 }

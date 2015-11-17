@@ -41,7 +41,7 @@
     @endforeach
 
     </div> <!-- *** end  portfolio-wrapper *** -->
-    <a href="#" style="margin-left: 30px;" class="button light margin-top-medium margin-bottom-medium hvr-grow"><i class="icon-reload"></i> Ver más las cocinas</a>
+    <a href="#" style="margin-left: 30px;" class="button light margin-top-medium margin-bottom-medium hvr-grow"><i class="icon-reload"></i> Ver más cocinas</a>
 
-    <a href="#" style="margin-left: 30px;" class="button light margin-top-medium margin-bottom-medium hvr-grow"><i class="icon-reload"></i> Ver más de cuartos fríos</a>
+    <a href="#" style="margin-left: 30px;" class="button light margin-top-medium margin-bottom-medium hvr-grow"><i class="icon-reload"></i> Ver más cuartos fríos</a>
 </section>

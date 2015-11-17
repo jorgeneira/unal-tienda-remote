@@ -19,7 +19,7 @@
 </div>  <!-- *** end Full Screen Menu *** -->
 
 <!-- *****  hamburger icon ***** -->
-<a href="javascript:void(0)" class="menu-trigger">
+<a href="javascript:void(0)" class="menu-trigger hidden-md hidden-lg">
     <div class="hamburger">
         <div class="menui top-menu"></div>
         <div class="menui mid-menu"></div>

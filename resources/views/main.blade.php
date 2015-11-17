@@ -19,5 +19,7 @@
 
 @include('partials.globalSharedScripts')
 
+@yield('bottomScripts')
+
 </body>
 </html>

@@ -11,8 +11,6 @@ class CuartosController extends Controller {
 	public function create() {
 
 
-
-
 		return view('pages.cuartosCreate');
 
 	}

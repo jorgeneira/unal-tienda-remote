@@ -512,7 +512,7 @@ h6 {
 header {
   position: relative;
 }
-header .overlay {
+header .overlay, section .overlay  {
   position: absolute;
   top: 0;
   left: 0;
