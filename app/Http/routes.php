@@ -13,10 +13,12 @@
 
 Route::get('/','HomeController@index');
 
-Route::get('cocinas-a-medida', 'CocinasController@create');
 Route::get('cuartos-frios-a-medida', 'CuartosController@create');
+Route::post('cuartos-frios-a-medida', 'CuartosController@store');
+
+Route::get('cocinas-a-medida', 'CocinasController@create');
 
 Route::group(['prefix' => 'api'], function(){
-	Route::get('pedidos','PedidosController@apiIndex');
-	Route::post('pedidos','PedidosController@apiUpdate');
+	Route::get('cold-room-requests','CuartosController@apiIndex');
+	Route::post('cold-room-requests','CuartosController@apiUpdate');
 });

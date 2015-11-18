@@ -17,9 +17,9 @@
 
                 <div class="col-xs-12 col-md-8 pull-right">
                     <ul id="headerMenu" class="nav nav-pills hidden-xs hidden-sm pull-right">
-                        <li role="presentation" class="active"><a href="#">Inicio</a></li>
+                        <li role="presentation"><a href="#">Inicio</a></li>
                         <li role="presentation"><a href="#">Nuestra Empresa</a></li>
-                        <li role="presentation"><a href="#">Cuartos Frios</a></li>
+                        <li role="presentation" class="active"><a href="#">Cuartos Frios</a></li>
                         <li role="presentation"><a href="#">Cocinas</a></li>
                         <li role="presentation"><a href="#">Escríbenos</a></li>
                     </ul>

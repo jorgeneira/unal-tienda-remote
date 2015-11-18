@@ -1,1 +1,85 @@
-.no-margin{margin:0!important}.no-padding{padding:0!important}#header .logo-container,.formulario>.container{border:1px solid #000;padding:10px;box-shadow:2px 2px 6px 0 rgba(0,1,0,.75)}.logoBlue{color:#00B5E4}.logoGray{color:#7A7A7A}.logoOrange{color:#FF5E00}#header .logo-container{background:rgba(0,0,0,.15)}.blackBackground{background:#000}.formulario{position:relative}.formulario>.container{background:rgba(0,0,0,.5);position:relative;z-index:100}.formulario label{color:#DBDBDB}.formulario-cuarto{background-image:url(/img/slider/slider-1.jpg)}#headerMenu{line-height:30px}#headerMenu .active a{color:#FFF;background:#FF5E00!important}#headerMenu a{border-radius:0;color:#BCBCBC}#headerMenu a:hover{background:#00B5E4;color:#333}#innerHeaderWrap{background:#333}#innerHeaderWrap #innerHeader{height:50px;line-height:50px}#innerHeaderWrap .logo-container a{display:block}#innerHeaderWrap .logo-container a img{height:40px}#innerHeaderWrap .logo-container a span{font-family:"Campton Bold",sans-serif;line-height:10px;text-decoration:underline}
+.no-margin {
+  margin: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.logoBlue {
+  color: #00B5E4;
+}
+.logoGray {
+  color: #7A7A7A;
+}
+.logoOrange {
+  color: #FF5E00;
+}
+#header .logo-container {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 1, 0, 0.75);
+}
+.blackBackground {
+  background: #000000;
+}
+.formulario {
+  position: relative;
+}
+.formulario > .container {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 1, 0, 0.75);
+  position: relative;
+  z-index: 100;
+}
+.formulario label {
+  color: #DBDBDB;
+}
+.formulario legend {
+  color: #00B5E4;
+  border-bottom: 1px solid #FF5E00;
+}
+.formulario input {
+  background: rgba(255, 255, 255, 0.3);
+  color: #FFF;
+}
+.formulario-cuarto {
+  background: url('/img/slider/slider-1.jpg') no-repeat;
+  background-size: cover;
+}
+#headerMenu {
+  line-height: 30px;
+}
+#headerMenu .active a {
+  color: #FFF;
+  background: #FF5E00 !important;
+}
+#headerMenu a {
+  border-radius: 0;
+  color: #BCBCBC;
+}
+#headerMenu a:hover {
+  background: #00B5E4;
+  color: #333;
+}
+#innerHeaderWrap {
+  background: #333;
+}
+#innerHeaderWrap #innerHeader {
+  height: 50px;
+  line-height: 50px;
+}
+#innerHeaderWrap .logo-container a {
+  display: block;
+}
+#innerHeaderWrap .logo-container a img {
+  height: 40px;
+}
+#innerHeaderWrap .logo-container a span {
+  font-family: "Campton Bold", sans-serif;
+  line-height: 10px;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=custom.css.map */

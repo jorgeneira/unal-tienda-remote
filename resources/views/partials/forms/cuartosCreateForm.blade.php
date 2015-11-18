@@ -18,66 +18,90 @@
     <div class="container">
         <div class="row">
             <div class="center-block col col-xs-12 col-md-6" style="float:none;">
-                <form class="form-horizontal" role="form" action="http://google.com" method="POST">
-
-                    <div class="form-group">
-                        <label for="largo" class="col-xs-12 col-md-4 control-label">Largo</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input id="largo" type="text" value="5" name="pedido[largo]">
+                @include('utils.validationErrors')
+                <form class="form form-horizontal" role="form" action="" method="POST">
+                    {!! csrf_field() !!}
+                    <fieldset>
+                        <legend>Información del Cliente:</legend>
+                        <div class="form-group">
+                            <label for="nombre" class="col-xs-12 col-sm-6 col-md-4 control-label">Nombre</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="nombre" class="form-control" type="text" name="cliente[nombre]" required>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ancho" class="col-xs-12 col-md-4 control-label">Ancho</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input id="ancho" type="text" value="5" name="pedido[ancho]">
+                        <div class="form-group">
+                            <label for="ciudad" class="col-xs-12 col-sm-6 col-md-4 control-label">Ciudad</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="ciudad" class="form-control" type="text" name="cliente[ciudad]" required>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="alto" class="col-xs-12 col-md-4 control-label">Alto</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input id="alto" type="text" value="3.50" name="pedido[alto]">
+                        <div class="form-group">
+                            <label for="email" class="col-xs-12 col-sm-6 col-md-4 control-label">E-Mail</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="email" class="form-control" type="text" name="cliente[email]" required>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="temperatura" class="col-xs-12 col-md-4 control-label">Temperatura Externa</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input id="temperatura" type="text" value="20" name="pedido[temperatura]">
+                        <div class="form-group">
+                            <label for="ciudad" class="col-xs-12 col-sm-6 col-md-4 control-label">Compañía</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="ciudad" class="form-control" type="text" name="cliente[compania]" required>
+                            </div>
                         </div>
-                    </div>
+                    </fieldset>
 
-                    <div class="form-group">
-                        <label for="producto" class="col-xs-12 col-md-4 control-label">Producto</label>
-                        <label class="radio-inline pull-left" style="margin-left: 15px;">
-                            <input type="radio" name="optradio">Pollo
-                        </label>
-                        <label class="radio-inline pull-left">
-                            <input type="radio" name="optradio">Mora
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="peso" class="col-xs-12 col-md-4 control-label">Peso Total</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input id="peso" type="text" value="50" name="pedido[peso]">
+                    <fieldset>
+                        <legend>Especificaciones:</legend>
+                        <div class="form-group">
+                            <label for="largo" class="col-xs-12 col-sm-6 col-md-4 control-label">Largo</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="largo" type="text" value="5" name="pedido[largo]" required>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email" class="col-xs-12 col-md-4 control-label">Email</label>
-                        <div class="col-xs-12 col-md-8">
-                            <input type="email" class="form-control" id="pedido[email]"
-                                   placeholder="ads@ejemplo.com">
+                        <div class="form-group">
+                            <label for="ancho" class="col-xs-12 col-sm-6 col-md-4 control-label">Ancho</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="ancho" type="text" value="5" name="pedido[ancho]" required>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="alto" class="col-xs-12 col-sm-6 col-md-4 control-label">Alto</label>
 
-                    <div class="form-group">
-                        <div class="col-lg-offset-4 col-md-8">
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="alto" type="text" value="3.50" name="pedido[alto]" required>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="temperatura" class="col-xs-12 col-sm-6 col-md-4 control-label">Temperatura Externa</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="temperatura" type="text" value="20" name="pedido[temperatura]" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="producto" class="col-xs-12 col-sm-6 col-md-4 control-label">Producto</label>
+                            <label class="radio-inline pull-left" style="margin-left: 15px;">
+                                <input type="radio" name="pedido[producto]" value="pollo" checked>Pollo
+                            </label>
+                            <label class="radio-inline pull-left">
+                                <input type="radio" name="pedido[producto]" value="mora">Mora
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="peso" class="col-xs-12 col-sm-6 col-md-4 control-label">Peso Total</label>
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <input id="peso" type="text" value="50" name="pedido[masa]" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-6 col-md-offset-4 col-xs-12 col-sm-6 col-md-8">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
 
                 </form>
             </div>

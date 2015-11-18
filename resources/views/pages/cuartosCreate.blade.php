@@ -67,6 +67,11 @@
                 maxboostedstep: 10,
                 postfix: 'Kg'
             });
+
+            @if(!empty($posted))
+                alertControllers.requestSuccessAlert();
+            @endif
+
         });
     </script>
 @endsection

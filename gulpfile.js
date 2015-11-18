@@ -31,7 +31,7 @@ elixir(function (mix) {
 		'tienda/css/custom.css',
 		'node_modules/sweetalert/dist/sweetalert.css'
 
-	], 'tienda/build/css', '.');
+	], 'tienda/css', '.');
 
 	mix.scripts([
 
@@ -51,6 +51,13 @@ elixir(function (mix) {
 		'tienda/js/modules/alertsController.js',
 		'tienda/js/main.js'
 
-	], 'tienda/build/js', '.');
+	], 'tienda/js', '.');
+
+	mix.version(['css/all.css', 'js/all.js']);
+
+	mix.browserSync({
+		proxy: 'remote.unal'
+
+	});
 
 });
