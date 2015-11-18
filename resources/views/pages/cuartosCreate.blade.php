@@ -19,9 +19,9 @@
     <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery("#ancho").TouchSpin({
-                min: 3.1,
+                min: 3.5,
                 max: 10,
-                step: 0.01,
+                step: 0.1,
                 decimals: 2,
                 boostat: 5,
                 maxboostedstep: 10,
@@ -29,9 +29,9 @@
             });
 
             jQuery("#largo").TouchSpin({
-                min: 3.5,
+                min: 3.1,
                 max: 10,
-                step: 0.01,
+                step: 0.1,
                 decimals: 2,
                 boostat: 5,
                 maxboostedstep: 10,
@@ -41,7 +41,7 @@
             jQuery("#alto").TouchSpin({
                 min: 3,
                 max: 4,
-                step: 0.01,
+                step: 0.1,
                 decimals: 2,
                 boostat: 5,
                 maxboostedstep: 10,
@@ -49,9 +49,9 @@
             });
 
             jQuery("#temperatura").TouchSpin({
-                min: 20,
+                min: 10,
                 max: 35,
-                step: 0.1,
+                step: 1.0,
                 decimals: 1,
                 boostat: 5,
                 maxboostedstep: 10,
@@ -67,6 +67,8 @@
                 maxboostedstep: 10,
                 postfix: 'Kg'
             });
+
+            jQuery('.info-icon').popover();
 
             @if(!empty($posted))
                 alertControllers.requestSuccessAlert();
