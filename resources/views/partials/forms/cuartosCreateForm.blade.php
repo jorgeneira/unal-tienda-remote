@@ -50,7 +50,7 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend>Especificaciones: <i class="fa fa-exclamation-circle info-icon" data-toggle="popover" title="<i class='fa fa-exclamation-circle'></i> Informacion:" data-trigger="hover" data-html="true" data-content="El alto máximo y mínimo están definidos según trabajo en alturas si el cliente tiene un cuarto frio mas alto que el máximo no hay problema pero la altura del evaporador no subirá mas de 4 metros.<br><br>Es importante recordar que el ancho de la cámara corresponde a la pared que tiene la puerta del cuarto."></i></legend>
+                        <legend>Especificaciones: <i class="fa fa-exclamation-circle info-icon" data-toggle="popover" title="<i class='fa fa-exclamation-circle'></i> Informacion:" data-trigger="hover" data-html="true" data-content="El alto máximo y mínimo están definidos según trabajo en alturas, si el cliente tiene un cuarto frio más alto que el máximo, no hay problema, pero la altura del evaporador no subirá más de 4 metros.<br><br>Es importante recordar que el ancho de la cámara corresponde a la pared que tiene la puerta del cuarto."></i></legend>
                         <p></p>
                         <div class="form-group">
                             <label for="largo" class="col-xs-12 col-sm-6 col-md-4 control-label">Largo</label>
