@@ -19,6 +19,11 @@ Route::post('cuartos-frios-a-medida', 'CuartosController@store');
 Route::get('cocinas-a-medida', 'CocinasController@create');
 
 Route::group(['prefix' => 'api'], function(){
+
+	Route::get('cold-room-requests/{requestID}','CuartosController@apiShow');
+
 	Route::get('cold-room-requests','CuartosController@apiIndex');
+
 	Route::post('cold-room-requests','CuartosController@apiUpdate');
+
 });

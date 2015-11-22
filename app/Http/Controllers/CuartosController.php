@@ -38,6 +38,18 @@ class CuartosController extends Controller {
 	}
 
 	/**
+	 * Return details for the given request.
+	 *
+	 * @param $requestID
+	 * @return \Illuminate\Http\Response
+	 */
+	public function apiShow($requestID) {
+
+		return ColdRoomRequest::with('client')->findOrFail($requestID);
+
+	}
+
+	/**
 	 * Display a listing of the resource in the API.
 	 *
 	 * @return \Illuminate\Http\Response
