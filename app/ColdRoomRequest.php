@@ -23,7 +23,23 @@ class ColdRoomRequest extends \Eloquent {
 	}
 
 	public function client() {
+
 		return $this->belongsTo(Client::class);
+	}
+
+	public function getAltoAttribute($valor){
+
+		return str_replace('.', ',', $valor);
+	}
+
+	public function getAnchoAttribute($valor){
+
+		return str_replace('.', ',', $valor);
+	}
+
+	public function getLargoAttribute($valor){
+
+		return str_replace('.', ',', $valor);
 	}
 
 }

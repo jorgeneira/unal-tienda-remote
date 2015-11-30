@@ -20,6 +20,8 @@ Route::get('cocinas-a-medida', 'CocinasController@create');
 
 Route::group(['prefix' => 'api'], function(){
 
+	Route::get('providers/cold-room','ProvidersController@getRoomsProviders');
+
 	Route::get('cold-room-requests/{requestID}','CuartosController@apiShow');
 
 	Route::get('cold-room-requests','CuartosController@apiIndex');
