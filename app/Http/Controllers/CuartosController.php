@@ -11,7 +11,10 @@ class CuartosController extends Controller {
 
 	public function create() {
 
-		return view('pages.cuartosCreate');
+		$currentPage = 'cuartos';
+
+
+		return view('pages.cuartosCreate', compact('currentPage'));
 
 	}
 
@@ -19,10 +22,12 @@ class CuartosController extends Controller {
 
 		$cliente = $request->input('cliente');
 		$pedido = $request->input('pedido');
+		$currentPage = 'cuartos';
+
 
 		Client::create($cliente)->coldRoomRequests()->create($pedido);
 
-		return view('pages.cuartosCreate', ['posted' => true]);
+		return view('pages.cuartosCreate', ['posted' => true]+compact('currentPage'));
 
 	}
 

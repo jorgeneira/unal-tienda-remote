@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/','HomeController@index');
+Route::get('/','StaticPagesController@index');
+
+Route::get('nuestra-empresa', 'StaticPagesController@nuestraEmpresa');
+
 
 Route::get('cuartos-frios-a-medida', 'CuartosController@create');
 Route::post('cuartos-frios-a-medida', 'CuartosController@store');

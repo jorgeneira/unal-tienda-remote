@@ -16,7 +16,6 @@ class CreateColdRoomProvidersTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('email');
-            $table->integer('product_id', false, true)->unique();
         });
     }
 

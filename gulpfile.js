@@ -28,8 +28,9 @@ elixir(function (mix) {
 		'tienda/css/responsive.css',
 		'tienda/css/typography.css',
 		'tienda/css/jquery.bootstrap-touchspin.min.css',
-		'tienda/css/custom.css',
-		'node_modules/sweetalert/dist/sweetalert.css'
+		'node_modules/sweetalert/dist/sweetalert.css',
+		'tienda/css/team.css',
+		'tienda/css/custom.css'
 
 	], 'tienda/css', '.');
 

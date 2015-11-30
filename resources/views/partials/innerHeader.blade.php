@@ -17,11 +17,11 @@
 
                 <div class="col-xs-12 col-md-8 pull-right">
                     <ul id="headerMenu" class="nav nav-pills hidden-xs hidden-sm pull-right">
-                        <li role="presentation"><a href="#">Inicio</a></li>
-                        <li role="presentation"><a href="#">Nuestra Empresa</a></li>
-                        <li role="presentation" class="active"><a href="#">Cuartos Frios</a></li>
-                        <li role="presentation"><a href="#">Cocinas</a></li>
-                        <li role="presentation"><a href="#">Escríbenos</a></li>
+                        <li role="presentation" @if($currentPage == 'inicio') class="active" @endif><a href="/">Inicio</a></li>
+                        <li role="presentation" @if($currentPage == 'empresa') class="active" @endif><a href="/nuestra-empresa">Nuestra Empresa</a></li>
+                        <li role="presentation" @if($currentPage == 'cuartos') class="active" @endif><a href="/cuartos-frios-a-medida">Cuartos Frios</a></li>
+                        <li role="presentation" @if($currentPage == 'cocina') class="active" @endif><a href="/cuartos-frios-a-medida">Cocinas</a></li>
+                        <li role="presentation" @if($currentPage == 'contacto') class="active" @endif><a href="#">Escríbenos</a></li>
                     </ul>
                 </div>
             </div>
