@@ -95,7 +95,7 @@
             </div>
             <div class="col-md-6 portfolio-item">
                 <div class="user-profile">
-                    <img class="avatar" src="/img/team/perfil.jpg" alt="Ash"/>
+                    <img class="avatar" src="/img/team/Serna.jpg" alt="Ash"/>
                     <div class="username">Sebastián Serna Palleja</div>
                     <div class="bio">
                         Estudiante de Ingeniería Mecatrónica
