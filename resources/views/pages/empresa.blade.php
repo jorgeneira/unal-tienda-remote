@@ -204,7 +204,7 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Bases de Datos
+                <h2 class="page-header">Informes Y Comunicaciones
                 </h2>
             </div>
         </div>
