@@ -20,7 +20,7 @@
                         <li role="presentation" @if($currentPage == 'inicio') class="active" @endif><a href="/">Inicio</a></li>
                         <li role="presentation" @if($currentPage == 'empresa') class="active" @endif><a href="/nuestra-empresa">Nuestra Empresa</a></li>
                         <li role="presentation" @if($currentPage == 'cuartos') class="active" @endif><a href="/cuartos-frios-a-medida">Cuartos Frios</a></li>
-                        <li role="presentation" @if($currentPage == 'cocina') class="active" @endif><a href="/cuartos-frios-a-medida">Cocinas</a></li>
+                        <li role="presentation" @if($currentPage == 'cocinas') class="active" @endif><a href="/cocinas-a-medida">Cocinas</a></li>
                         <li role="presentation" @if($currentPage == 'contacto') class="active" @endif><a href="#">Escríbenos</a></li>
                     </ul>
                 </div>

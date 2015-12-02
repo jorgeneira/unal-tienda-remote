@@ -29,6 +29,7 @@ elixir(function (mix) {
 		'tienda/css/typography.css',
 		'tienda/css/jquery.bootstrap-touchspin.min.css',
 		'node_modules/sweetalert/dist/sweetalert.css',
+		'tienda/css/cocinaStyles.css',
 		'tienda/css/team.css',
 		'tienda/css/custom.css'
 

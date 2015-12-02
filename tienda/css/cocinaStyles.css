@@ -1,0 +1,205 @@
+img {
+    border-radius: 5px;
+}
+
+.container {
+    position: relative;
+}
+canvas{
+    background: #ffffff;
+    outline: 5px solid #A9A9A9;
+}
+.textbox:hover {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+    box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+}
+
+.text {
+    padding: 4px;
+    padding-top: 50px;
+
+}
+
+.textbox {
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    color: #FFFFFF;
+    font-family: Verdana, serif;
+    margin-left: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.container #lav1puesto { /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+
+#cocinaTipoI, #cocinaTipoL, #cocinaTipoU, #est4puestos, #est6puestos, #lav1poceta, #lav2pocetas, #manijaTipo1,
+#manijaTipo2, #soporteTipo1, #soporteTipo2, #materialTipo1, #materialTipo2, #mesonTipo1, #mesonTipo2,
+#colorTipo1, #colorTipo2, #colorTipo3, #colorTipo4{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+
+#est4puestos:checked + img + div {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: red;
+}
+
+#est6puestos:checked + img {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    visibility: visible;
+    background-color: red;
+}
+
+#lav1poceta:checked + img + div {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: green;
+}
+
+#lav2pocetas {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: green;
+}
+
+#fb:checked + img + div {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: green;
+}
+
+.tipoCocina:hover {
+    border: 8px solid #ddd;
+
+}
+
+.cocinaSelector .hovereffect > h2{
+    visibility: hidden;
+    margin-top: -60px;
+    background-color: rgba(76, 174, 76, 0.62);
+    text-transform: capitalize;
+    padding: 19px 0;
+    font-family: verdana, sans-serif;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 19px;
+
+}
+
+/*estilos imagnes*/
+.hovereffect {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hovereffect .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out
+}
+
+.hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+
+.hovereffect h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(-100px);
+    -ms-transform: translatey(-100px);
+    transform: translatey(-100px);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    padding: 10px;
+}
+.hovereffect a.info {
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 50px 0 0;
+    padding: 7px 14px;
+}
+
+.hovereffect a.info:hover {
+    box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.hovereffect:hover h2, .hovereffect:hover a.info {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: translatey(0);
+    -webkit-transform: translatey(0);
+    transform: translatey(0);
+}
+
+.hovereffect:hover a.info {
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+}
+
+.hovereffect:checked + img + div {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: green;
+}
+
+#est4puestos:checked + div + img + div {
+    /* Or `#a1:checked+label` if you only want it for that input */
+    opacity: 0.8;
+    background-color: red;
+}
+
+/*-----------------*/
+
+#1234 {
+    height: 150px;
+    width: 150px;
+}
