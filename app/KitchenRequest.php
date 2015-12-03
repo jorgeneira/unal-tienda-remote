@@ -54,17 +54,17 @@ class KitchenRequest extends \Eloquent {
 
     public function getAltoAttribute($valor){
 
-        return str_replace('.', ',', $valor);
+        return $valor * 100;
     }
 
     public function getAnchoAttribute($valor){
 
-        return str_replace('.', ',', $valor);
+        return $valor * 100;
     }
 
     public function getLargoAttribute($valor){
 
-        return str_replace('.', ',', $valor);
+        return $valor * 100;
     }
 
 }
