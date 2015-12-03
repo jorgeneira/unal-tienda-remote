@@ -52,6 +52,10 @@
                 postfix: 'm'
             });
 
+            @if(!empty($posted))
+                alertControllers.requestSuccessAlert();
+            @endif
+
         });
 
         var cocinaFormCtrl = (function ($) {
