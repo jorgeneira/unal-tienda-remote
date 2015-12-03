@@ -319,7 +319,7 @@
                                 '               <div class="row">' +
                                 '                   <div class="col-xs-6">' +
                                 '                      <label>Superiores</label>' +
-                                '                    <select class="form-control" name="numModulosSupSec' + (j + 1) + '">' +
+                                '                    <select class="form-control" name="secciones['+(i + 1)+'][modulo_' + (j + 1) + '_sup]">' +
                                 '                          <option value="">#Div Sup</option>' +
                                 '                        <option value="2">2</option>' +
                                 '                        <option value="3">3</option>' +
@@ -328,7 +328,7 @@
                                 '                </div>' +
                                 '                   <div class="col-xs-6">' +
                                 '                    <label>Inferiores</label>' +
-                                '                    <select class="form-control" name="numModulosInfSec' + (j + 1) + '">' +
+                                '                    <select class="form-control" name="secciones['+(i + 1)+'][modulo_' + (j + 1) + '_inf]">' +
                                 '                          <option value="">#Div Inf</option>' +
                                 '                         <option value="2">2</option>' +
                                 '                         <option value="3">3</option>' +

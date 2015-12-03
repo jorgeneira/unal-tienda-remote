@@ -20,6 +20,7 @@ Route::get('cuartos-frios-a-medida', 'CuartosController@create');
 Route::post('cuartos-frios-a-medida', 'CuartosController@store');
 
 Route::get('cocinas-a-medida', 'CocinasController@create');
+Route::post('cocinas-a-medida', 'CocinasController@store');
 
 Route::group(['prefix' => 'api'], function(){
 

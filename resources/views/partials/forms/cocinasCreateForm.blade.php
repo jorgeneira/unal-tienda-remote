@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-10 center-block" style="float:none;">
-                <form class="form-horizontal" role="form" action="http://google.com" method="POST">
+                <form class="form-horizontal" role="form" action="" method="POST">
                     {!! csrf_field() !!}
                     <!-- Informacion del cliente -->
 

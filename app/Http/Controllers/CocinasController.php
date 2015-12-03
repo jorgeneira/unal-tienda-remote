@@ -12,9 +12,12 @@ class CocinasController extends Controller {
 
         $currentPage = 'cocinas';
 
-
         return view('pages.cocinasCreate', compact('currentPage'));
 
+    }
+
+    public function store(Request $request) {
+        return $request->all();
     }
 
 }
