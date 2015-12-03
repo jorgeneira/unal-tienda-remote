@@ -21,19 +21,60 @@
         <div class="row">
             <div class="col-xs-12 col-sm-10 center-block" style="float:none;">
                 <form class="form-horizontal" role="form" action="http://google.com" method="POST">
+                    {!! csrf_field() !!}
+                    <!-- Informacion del cliente -->
+
+                    <fieldset>
+                        <legend>Información del Cliente:</legend>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 center-block" style="float: none;">
+                                <div class="form-group">
+                                    <label for="nombre" class="col-xs-12 col-sm-6 col-md-4 control-label">Nombre</label>
+                                    <div class="col-xs-12 col-sm-6 col-md-8">
+                                        <input id="nombre" class="form-control" type="text" name="cliente[nombre]"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ciudad" class="col-xs-12 col-sm-6 col-md-4 control-label">Ciudad</label>
+                                    <div class="col-xs-12 col-sm-6 col-md-8">
+                                        <input id="ciudad" class="form-control" type="text" name="cliente[ciudad]"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-xs-12 col-sm-6 col-md-4 control-label">E-Mail</label>
+                                    <div class="col-xs-12 col-sm-6 col-md-8">
+                                        <input id="email" class="form-control" type="text" name="cliente[email]"
+                                               required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ciudad"
+                                           class="col-xs-12 col-sm-6 col-md-4 control-label">Compañía</label>
+                                    <div class="col-xs-12 col-sm-6 col-md-8">
+                                        <input id="ciudad" class="form-control" type="text" name="cliente[compania]"
+                                               required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
                     <!-- Dimensiones -->
 
                     <fieldset>
                         <legend>Dimensiones</legend>
                         <br>
-                        <div class="form-group col-xs-12 col-sm-4">
-                            <label class="col-xs-4 control-label" for="largo">Largo</label>
-                            <input class="col-xs-5" id="largo" type="text" value="5" name="pedido[largo]">
-                        </div>
 
                         <div class="form-group col-xs-12 col-sm-4">
                             <label class="col-xs-4 control-label" for="ancho">Ancho</label>
                             <input class="col-xs-5" id="ancho" type="text" value="5" name="pedido[ancho]">
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-4">
+                            <label class="col-xs-4 control-label" for="largo">Largo</label>
+                            <input class="col-xs-5" id="largo" type="text" value="5" name="pedido[largo]">
                         </div>
 
                         <div class="form-group col-xs-12 col-sm-4">
@@ -59,7 +100,7 @@
                             <div class="text-center col-xs-12 col-sm-4">
                                 <label>
                                     <div class="hovereffect">
-                                        <input id="cocinaTipoI" type="radio" name="tipoCocinaSelector" value="3"
+                                        <input id="cocinaTipoI" type="radio" name="pedido[tipo_cocina]" value="3"
                                                onclick="cocinaFormCtrl.aparecer('cocinaI'); cocinaFormCtrl.cambioCanvasSec(1);"
                                                checked="checked"/>
                                         <img class="img-responsive" src="/img/cocina/tipoI.jpg">
@@ -77,7 +118,7 @@
                             <div class="text-center col-xs-12 col-sm-4">
                                 <label>
                                     <div class="hovereffect">
-                                        <input id="cocinaTipoL" type="radio" name="tipoCocinaSelector" value="2"
+                                        <input id="cocinaTipoL" type="radio" name="pedido[tipo_cocina]" value="2"
                                                onclick="cocinaFormCtrl.aparecer('cocinaL'); cocinaFormCtrl.cambioCanvasSec(2);"/>
                                         <img class="img-responsive" src="/img/cocina/tipoL.jpg">
 
@@ -95,7 +136,7 @@
                             <div class="text-center col-xs-12 col-sm-4">
                                 <label>
                                     <div class="hovereffect">
-                                        <input id="cocinaTipoU" type="radio" name="tipoCocinaSelector" value="1"
+                                        <input id="cocinaTipoU" type="radio" name="pedido[tipo_cocina]" value="1"
                                                onclick="cocinaFormCtrl.aparecer('cocinaU'); cocinaFormCtrl.cambioCanvasSec(3);"/>
                                         <img class="img-responsive" src="/img/cocina/tipoU.jpg">
 
@@ -121,7 +162,7 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <p>Selecciona los accesorios que quieres isntalar en tu cocina:</p><br>
+                                <p>Selecciona los accesorios que quieres instalar en tu cocina:</p><br>
                             </div>
                         </div>
                         <div class="row">
@@ -132,7 +173,8 @@
                                         <div class="text-center col-xs-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="est4puestos" type="radio" name="estufaSelector" value="1"
+                                                    <input id="est4puestos" type="radio" name="pedido[tipo_estufa]"
+                                                           value="1"
                                                            onclick="cocinaFormCtrl.aparecer('est4p')"
                                                            checked="checked"/>
                                                     <img class="img-responsive" src="/img/cocina/estufa4.jpg">
@@ -149,7 +191,8 @@
                                         <div class="text-center col-xs-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="est6puestos" type="radio" name="estufaSelector" value="2"
+                                                    <input id="est6puestos" type="radio" name="pedido[tipo_estufa]"
+                                                           value="2"
                                                            onclick="cocinaFormCtrl.aparecer('est6p')"/>
                                                     <img class="img-responsive" src="/img/cocina/estufa6.jpg">
 
@@ -172,7 +215,7 @@
                                         <div class="text-center col-xs-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="lav1poceta" type="radio" name="lavaplatosSelector"
+                                                    <input id="lav1poceta" type="radio" name="pedido[tipo_lavaplatos]"
                                                            value="1"
                                                            onclick="cocinaFormCtrl.aparecer('lav1p')"
                                                            checked="checked"/>
@@ -191,7 +234,7 @@
                                         <div class="text-center col-xs-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="lav2pocetas" type="radio" name="lavaplatosSelector"
+                                                    <input id="lav2pocetas" type="radio" name="pedido[tipo_lavaplatos]"
                                                            value="2"
                                                            onclick="cocinaFormCtrl.aparecer('lav2p')"/>
                                                     <img class="img-responsive" src="/img/cocina/lava2.jpg">
@@ -221,13 +264,13 @@
                                         <div class="col-xs-12 col-md-6">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="extractor" value="1" checked>
+                                                    <input type="radio" name="pedido[extractor]" value="1" checked>
                                                     Sí deseo extractor.
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="extractor" value="0">
+                                                    <input type="radio" name="pedido[extractor]" value="0">
                                                     No añadir extractor.
                                                 </label>
                                             </div>
@@ -308,14 +351,14 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <label for="seccionEstufa">Sección:</label>
-                                                    <select name="estufa[section]" id="seccionEstufa"
+                                                    <select name="pedido[seccion_estufa]" id="seccionEstufa"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label for="moduloEstufa">Módulo:</label>
-                                                    <select name="estufa[modulo]" id="moduloEstufa"
+                                                    <select name="pedido[modulo_estufa]" id="moduloEstufa"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
                                                     </select>
@@ -329,14 +372,14 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <label for="seccionEstufa">Sección:</label>
-                                                    <select name="estufa[section]" id="seccionEstufa"
+                                                    <select name="pedido[seccion_lavaplatos]" id="seccionLavaplatos"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label for="moduloEstufa">Módulo:</label>
-                                                    <select name="estufa[modulo]" id="moduloEstufa"
+                                                    <select name="pedido[modulo_lavaplatos]" id="moduloLavaplatos"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
                                                     </select>
@@ -372,7 +415,7 @@
                                         <div class="text-center col-xs-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="manijaTipo1" type="radio" name="tipoManijaSelector"
+                                                    <input id="manijaTipo1" type="radio" name="pedido[manija]"
                                                            value="1"
                                                            onclick="cocinaFormCtrl.aparecer('manija1');"
                                                            checked="checked"/>
@@ -391,7 +434,7 @@
                                         <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="manijaTipo2" type="radio" name="tipoManijaSelector"
+                                                    <input id="manijaTipo2" type="radio" name="pedido[manija]"
                                                            value="2"
                                                            onclick="cocinaFormCtrl.aparecer('manija2');"/>
                                                     <img class="img-responsive" src="/img/cocina/manija2.jpg">
@@ -416,11 +459,11 @@
                                         <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="materialTipo1" type="radio" name="tipoMaterialSelector"
+                                                    <input id="materialTipo1" type="radio" name="pedido[material]"
                                                            value="1"
                                                            onclick="cocinaFormCtrl.aparecer('material1');"
                                                            checked="checked"/>
-                                                    <img class="img-responsive" src="/img/cocina/material1.jpe">
+                                                    <img class="img-responsive" src="/img/cocina/material1.jpg">
 
                                                     <h2 id="material1">tipo 1</h2>
 
@@ -435,7 +478,7 @@
                                         <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="materialTipo2" type="radio" name="tipoMaterialSelector"
+                                                    <input id="materialTipo2" type="radio" name="pedido[material]"
                                                            value="2"
                                                            onclick="cocinaFormCtrl.aparecer('material2');"/>
                                                     <img class="img-responsive" src="/img/cocina/material2.jpg">
@@ -461,7 +504,7 @@
                                         <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="mesonTipo1" type="radio" name="tipoMesonSelector"
+                                                    <input id="mesonTipo1" type="radio" name="pedido[meson]"
                                                            value="1"
                                                            onclick="cocinaFormCtrl.aparecer('meson1');"
                                                            checked="checked"/>
@@ -480,7 +523,7 @@
                                         <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="mesonTipo2" type="radio" name="tipoMesonSelector"
+                                                    <input id="mesonTipo2" type="radio" name="pedido[meson]"
                                                            value="2"
                                                            onclick="cocinaFormCtrl.aparecer('meson2');"/>
                                                     <img class="img-responsive" src="/img/cocina/meson2.jpg">
@@ -505,7 +548,7 @@
                                         <div class="text-center col-xs-6 col-md-3">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="colorTipo1" type="radio" name="tipoColorSelector"
+                                                    <input id="colorTipo1" type="radio" name="pedido[color]"
                                                            value="1"
                                                            onclick="cocinaFormCtrl.aparecer('color1');"
                                                            checked="checked"/>
@@ -525,7 +568,7 @@
                                         <div class="text-center col-xs-6 col-md-3">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="colorTipo2" type="radio" name="tipoColorSelector"
+                                                    <input id="colorTipo2" type="radio" name="pedido[color]"
                                                            value="2"
                                                            onclick="cocinaFormCtrl.aparecer('color2');"/>
 
@@ -544,7 +587,7 @@
                                         <div class="text-center col-xs-6 col-md-3">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="colorTipo3" type="radio" name="tipoColorSelector"
+                                                    <input id="colorTipo3" type="radio" name="pedido[color]"
                                                            value="3"
                                                            onclick="cocinaFormCtrl.aparecer('color3');"/>
 
@@ -563,7 +606,7 @@
                                         <div class="text-center col-xs-6 col-md-3">
                                             <label>
                                                 <div class="hovereffect">
-                                                    <input id="colorTipo4" type="radio" name="tipoColorSelector"
+                                                    <input id="colorTipo4" type="radio" name="pedido[color]"
                                                            value="4"
                                                            onclick="cocinaFormCtrl.aparecer('color4');"/>
 

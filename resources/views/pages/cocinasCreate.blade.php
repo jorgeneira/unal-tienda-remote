@@ -227,7 +227,7 @@
                     plantilla += '<div class="form-group col-xs-12 col-md-12">' +
                             '<label class="col-xs-12 col-md-6 control-label text-left">Sección ' + (i + 1) + '</label> ' +
                             '<div class="col-xs-12 col-md-6 selectContainer"> ' +
-                            '<select class="form-control" id="numModSec' + (i + 1) + '" name="numModSec' + (i + 1) + '" onchange="cocinaFormCtrl.cambioCanvasSecModulos()"> ' +
+                            '<select class="form-control" id="numModSec' + (i + 1) + '" name="pedido[modulos_seccion_' + (i + 1) + ']" onchange="cocinaFormCtrl.cambioCanvasSecModulos()"> ' +
                             '<option value="2" selected="selected">2 Modulos</option>' +
                             '<option value="3">3 Modulos</option>' +
                             '<option value="4">4 Modulos</option>' +
