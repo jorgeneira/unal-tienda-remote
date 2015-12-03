@@ -345,37 +345,6 @@
                 }
 
                 $('#numDivisionesSec').html(plantilla);
-                /*
-                 plantilla = '';
-                 plantilla += '<div class="col-xs-12 col-sm-6">Estufa</div>' +
-                 '<div class="col-xs-6 col-sm-3"><select class="form-control" name="posEstufaSec">' +
-                 '<option value=""># Sección:</option>';
-                 for (var i = 0; i < numSecciones; i++) {
-                 plantilla += '<option value="' + (i + 1) + '">' + (i + 1) + '</option>';
-                 }
-                 plantilla += ' </select></div>' +
-                 '<div class="col-xs-6 col-sm-3"><select class="form-control" name="posEstufaEsp">' +
-                 '<option value=""># Modulo:</option>';
-                 for (var i = 0; i < numEspacios[0]; i++) {
-                 plantilla += '<option value="' + (i + 1) + '">' + (i + 1) + '</option>';
-                 }
-                 plantilla += '</select></div>';
-
-                 plantilla += '<div class="col-xs-12 col-sm-6">Lavaplatos</div>' +
-                 '<div class="col-xs-4 col-sm-3"><select class="form-control" name="posLavaplatosSec">' +
-                 '<option value=""># Sección:</option>';
-                 for (var i = 0; i < numSecciones; i++) {
-                 plantilla += '<option value="' + (i + 1) + '">' + (i + 1) + '</option>';
-                 }
-                 plantilla += ' </select></div>' +
-                 '<div class="col-xs-4 col-sm-3"><select class="form-control" name="posLavaplatosEsp">' +
-                 '<option value=""># Modulo:</option>';
-                 for (var i = 0; i < numEspacios[0]; i++) {
-                 plantilla += '<option value="' + (i + 1) + '">' + (i + 1) + '</option>';
-                 }
-                 plantilla += '</select></div>';
-
-                 $('#posEstufaLavaplatos').html(plantilla);*/
             };
 
             return {
