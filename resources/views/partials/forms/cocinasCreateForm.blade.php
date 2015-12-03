@@ -349,15 +349,10 @@
                                         <fieldset>
                                             <legend class="text-left"> Estufa:</legend>
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <label for="seccionEstufa">Sección:</label>
-                                                    <select name="pedido[seccion_estufa]" id="seccionEstufa"
-                                                            class="form-control">
-                                                        <option value="1"># 1</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-12">
                                                     <label for="moduloEstufa">Módulo:</label>
+                                                    <input type="hidden" name="pedido[seccion_estufa]" id="seccionEstufa" />
+
                                                     <select name="pedido[modulo_estufa]" id="moduloEstufa"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
@@ -370,15 +365,11 @@
                                         <fieldset>
                                             <legend class="text-left"> Lavaplatos:</legend>
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <label for="seccionEstufa">Sección:</label>
-                                                    <select name="pedido[seccion_lavaplatos]" id="seccionLavaplatos"
-                                                            class="form-control">
-                                                        <option value="1"># 1</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <label for="moduloEstufa">Módulo:</label>
+
+                                                <div class="col-sm-12">
+                                                    <label for="moduloLavaplatos">Módulo:</label>
+                                                    <input type="hidden" name="pedido[seccion_lavaplatos]" id="seccionLavaplatos" />
+
                                                     <select name="pedido[modulo_lavaplatos]" id="moduloLavaplatos"
                                                             class="form-control">
                                                         <option value="1"># 1</option>
