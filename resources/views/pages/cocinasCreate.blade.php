@@ -52,14 +52,10 @@
                 postfix: 'm'
             });
 
-            @if(!empty($posted))
-                alertControllers.requestSuccessAlert();
-            @endif
-
         });
 
         var cocinaFormCtrl = (function ($) {
-            var tipo;
+            var tipo, modulosTotales;
             var contSec = document.getElementById("canvasSecciones").getContext("2d");
             var contSecMod = document.getElementById("canvasSeccionesYModulos").getContext("2d");
 
@@ -235,75 +231,194 @@
                             '<option value="2" selected="selected">2 Modulos</option>' +
                             '<option value="3">3 Modulos</option>' +
                             '<option value="4">4 Modulos</option>' +
+                            '<option value="5">5 Modulos</option>' +
+                            '<option value="6">6 Modulos</option>' +
+                            '<option value="7">7 Modulos</option>' +
                             '</select></div></div>';
                 }
                 jQuery('#secModulos').html(plantilla);
             };
 
+            $.fn.insertAtIndex = function (index, selector) {
+                var opts = $.extend({
+                    index: 0,
+                    selector: '<div/>'
+                }, {index: index, selector: selector});
+                return this.each(function () {
+                    var p = $(this);
+                    var i = ($.isNumeric(opts.index) ? parseInt(opts.index) : 0);
+                    if (i <= 0)
+                        p.prepend(opts.selector);
+                    else if (i > p.children().length - 1)
+                        p.append(opts.selector);
+                    else
+                        p.children().eq(i).before(opts.selector);
+                });
+            };
+
+            var actualizarModulosEstufaLavaplatos = function (tipoSec) {
+                var secEstufa = $('#moduloEstufa');
+                var secLavaplatos = $('#moduloLavaplatos');
+
+                if (tipoSec == 1) {
+                    var modEstufa = document.getElementById("moduloEstufa");
+                    var numModEstufa = modEstufa.options[modEstufa.selectedIndex].value;
+
+                    for (var i = 0; i < modulosTotales; i++) {
+                        if ($('#moduloLavaplatos option[value="' + (i + 1) + '"]').length == 0) {
+                            secLavaplatos.insertAtIndex((i + 1) - 1, '<option value="' + (i + 1) + '"># ' + (i + 1) + '</option>');
+                            i = modulosTotales;
+                        }
+                    }
+                    secLavaplatos.find("option[value='" + parseInt(numModEstufa) + "']").remove();
+                }
+
+                if (tipoSec == 2) {
+                    var modLavaplatos = document.getElementById("moduloLavaplatos");
+                    var numModLavaplatos = modLavaplatos.options[modLavaplatos.selectedIndex].value;
+
+                    for (var i = 0; i < modulosTotales; i++) {
+                        if ($('#moduloEstufa option[value="' + (i + 1) + '"]').length == 0) {
+                            secEstufa.insertAtIndex((i + 1) - 1, '<option value="' + (i + 1) + '"># ' + (i + 1) + '</option>');
+                            i = modulosTotales;
+                        }
+                    }
+                    secEstufa.find("option[value='" + parseInt(numModLavaplatos) + "']").remove();
+                }
+
+                if (tipo >= 1) {
+                    var numSec1 = document.getElementById("numModSec1");
+                    var canvasNumSec1 = numSec1.options[numSec1.selectedIndex].value;
+                    if (tipo >= 2) {
+                        var numSec2 = document.getElementById("numModSec2");
+                        var canvasNumSec2 = numSec2.options[numSec2.selectedIndex].value;
+                        if (tipo == 3) {
+                            var numSec3 = document.getElementById("numModSec3");
+                            var canvasNumSec3 = numSec3.options[numSec3.selectedIndex].value;
+                        }
+                    }
+                }
+
+                /*-------------------- Actualiza el valor de la seccion oculta -------------------------*/
+                if ($("#moduloEstufa").val() <= (parseInt(canvasNumSec1) + parseInt(canvasNumSec2))) {
+                    if ($("#moduloEstufa").val() <= parseInt(canvasNumSec1)) {
+                        document.getElementById("seccionEstufa").value = 1;
+                    } else {
+                        document.getElementById("seccionEstufa").value = 2;
+                    }
+                } else {
+                    document.getElementById("seccionEstufa").value = 3;
+                }
+
+                if ($("#moduloLavaplatos").val() <= (parseInt(canvasNumSec1) + parseInt(canvasNumSec2))) {
+                    if ($("#moduloLavaplatos").val() <= parseInt(canvasNumSec1)) {
+                        document.getElementById("seccionLavaplatos").value = 1;
+                    } else {
+                        document.getElementById("seccionLavaplatos").value = 2;
+                    }
+                } else {
+                    document.getElementById("seccionLavaplatos").value = 3;
+                }
+                /*----------------------------------------------------------------------------------*/
+
+                /*-------------------- Actualiza los modulos que se ocultan -------------------------*/
+                for (var i = 0; i < modulosTotales; i++) {
+                    $('#numDivisionesSec').find("#modulo" + (i + 1) + "").show();
+                }
+                $('#numDivisionesSec').find("#modulo" + $("#moduloEstufa").val()).hide();
+                $('#numDivisionesSec').find("#modulo" + $("#moduloLavaplatos").val()).hide();
+                /*--------------------------------------------------------------------------------------*/
+            };
+
+            var actualizarDivisionesSecciones = function (tipoMod) {
+
+                var secEstufa = $('#moduloEstufa');
+                var secLavaplatos = $('#moduloLavaplatos');
+
+                secEstufa.empty();
+                secLavaplatos.empty();
+
+                for (var i = 0; i < modulosTotales; i++) {
+                    secEstufa.append('<option value="' + (i + 1) + '"># ' + (i + 1) + '</option>');
+                    if (i != 0) secLavaplatos.append('<option value="' + (i + 1) + '"># ' + (i + 1) + '</option>');
+                }
+            };
+
             var cambioCanvasSecModulos = function (canvasTipo) {
                 if (canvasTipo == null) canvasTipo = tipo;
-                contSecMod.clearRect(0, 0, 250, 250);
+
                 var anchoSec1, anchoSec2, anchoSec3, i, anchoMueble = 60;
                 contSecMod.font = "16px Arial";
                 var canvasWidth = 250;
                 var canvasHeight = 250;
 
-                var numSec1 = document.getElementById("numModSec1"), numSec2;
-                var canvasNumSec1 = numSec1.options[numSec1.selectedIndex].value;
-                var canvasNumSec2 = 0, canvasNumSec3 = 0;
+                var canvasNumSec1 = 0, canvasNumSec2 = 0, canvasNumSec3 = 0;
 
-                if (canvasTipo == "1") {
+                if (canvasTipo >= 1) {
+                    contSecMod.clearRect(0, 0, 250, 250);
+
+                    var numSec1 = document.getElementById("numModSec1");
+                    canvasNumSec1 = numSec1.options[numSec1.selectedIndex].value;
+
                     anchoSec1 = canvasHeight / canvasNumSec1;
-                    for (i = 0; i < canvasNumSec1; i++) {
-                        contSecMod.strokeRect(0, (i * anchoSec1), anchoMueble, anchoSec1);
-                        contSecMod.fillText(String(i + 1), anchoMueble / 2 - 6, anchoSec1 / 2 + (i * anchoSec1));
-                    }
-                }
-
-                if (canvasTipo == "2") {
-                    numSec2 = document.getElementById("numModSec2");
-                    canvasNumSec2 = numSec2.options[numSec2.selectedIndex].value;
-                    anchoSec1 = (canvasHeight - anchoMueble) / canvasNumSec1;
-                    anchoSec2 = (canvasWidth - anchoMueble) / canvasNumSec2;
 
                     for (i = 0; i < canvasNumSec1; i++) {
                         contSecMod.strokeRect(0, (i * anchoSec1), anchoMueble, anchoSec1);
                         contSecMod.fillText(String(i + 1), anchoMueble / 2 - 6, anchoSec1 / 2 + (i * anchoSec1));
                     }
 
-                    for (i = 0; i < canvasNumSec2; i++) {
-                        contSecMod.strokeRect(anchoMueble + (i * anchoSec2), canvasHeight - anchoMueble, anchoSec2, anchoMueble);
-                        contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1)), anchoSec2 / 2 - 5 + anchoMueble + (i * anchoSec2), anchoMueble / 2 + 6 + (canvasHeight - anchoMueble));
+                    if (canvasTipo >= 2) {
+                        contSecMod.clearRect(0, 0, 250, 250);
+
+                        var numSec2 = document.getElementById("numModSec2");
+                        canvasNumSec2 = numSec2.options[numSec2.selectedIndex].value;
+
+                        anchoSec1 = (canvasHeight - anchoMueble) / canvasNumSec1;
+                        anchoSec2 = (canvasWidth - anchoMueble) / canvasNumSec2;
+
+                        for (i = 0; i < canvasNumSec1; i++) {
+                            contSecMod.strokeRect(0, (i * anchoSec1), anchoMueble, anchoSec1);
+                            contSecMod.fillText(String(i + 1), anchoMueble / 2 - 6, anchoSec1 / 2 + (i * anchoSec1));
+                        }
+
+                        for (i = 0; i < canvasNumSec2; i++) {
+                            contSecMod.strokeRect(anchoMueble + (i * anchoSec2), canvasHeight - anchoMueble, anchoSec2, anchoMueble);
+                            contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1)), anchoSec2 / 2 - 5 + anchoMueble + (i * anchoSec2), anchoMueble / 2 + 6 + (canvasHeight - anchoMueble));
+                        }
+
+                        if (canvasTipo == 3) {
+                            contSecMod.clearRect(0, 0, 250, 250);
+
+                            var numSec3 = document.getElementById("numModSec3");
+                            canvasNumSec3 = numSec3.options[numSec3.selectedIndex].value;
+
+                            anchoSec2 = (canvasWidth - 2 * anchoMueble) / canvasNumSec2;
+                            anchoSec3 = (canvasHeight - anchoMueble) / canvasNumSec3;
+
+                            for (i = 0; i < canvasNumSec1; i++) {
+                                contSecMod.strokeRect(0, (i * anchoSec1), anchoMueble, anchoSec1);
+                                contSecMod.fillText(String(i + 1), anchoMueble / 2 - 6, anchoSec1 / 2 + (i * anchoSec1));
+                            }
+
+                            for (i = 0; i < canvasNumSec2; i++) {
+                                contSecMod.strokeRect(anchoMueble + (i * anchoSec2), canvasHeight - anchoMueble, anchoSec2, anchoMueble);
+                                contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1)), anchoSec2 / 2 - 5 + anchoMueble + (i * anchoSec2), anchoMueble / 2 + 6 + (canvasHeight - anchoMueble));
+                            }
+
+                            for (i = 0; i < canvasNumSec3; i++) {
+                                contSecMod.strokeRect(canvasWidth - anchoMueble, canvasHeight - anchoMueble - anchoSec3 - (i * anchoSec3), anchoMueble, anchoSec3);
+                                contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1) + parseInt(canvasNumSec2)), anchoMueble / 2 - 6 + (canvasWidth - anchoMueble), anchoSec3 / 2 + (canvasHeight - anchoMueble - anchoSec3 - (i * anchoSec3)));
+                            }
+                        }
                     }
                 }
-
-                if (canvasTipo == "3") {
-                    numSec2 = document.getElementById("numModSec2");
-                    canvasNumSec2 = numSec2.options[numSec2.selectedIndex].value;
-                    var numSec3 = document.getElementById("numModSec3");
-                    canvasNumSec3 = numSec3.options[numSec3.selectedIndex].value;
-                    anchoSec1 = (canvasHeight - anchoMueble) / canvasNumSec1;
-                    anchoSec2 = (canvasWidth - 2 * anchoMueble) / canvasNumSec2;
-                    anchoSec3 = (canvasHeight - anchoMueble) / canvasNumSec3;
-
-                    for (i = 0; i < canvasNumSec1; i++) {
-                        contSecMod.strokeRect(0, (i * anchoSec1), anchoMueble, anchoSec1);
-                        contSecMod.fillText(String(i + 1), anchoMueble / 2 - 6, anchoSec1 / 2 + (i * anchoSec1));
-                    }
-
-                    for (i = 0; i < canvasNumSec2; i++) {
-                        contSecMod.strokeRect(anchoMueble + (i * anchoSec2), canvasHeight - anchoMueble, anchoSec2, anchoMueble);
-                        contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1)), anchoSec2 / 2 - 5 + anchoMueble + (i * anchoSec2), anchoMueble / 2 + 6 + (canvasHeight - anchoMueble));
-                    }
-
-                    for (i = 0; i < canvasNumSec3; i++) {
-                        contSecMod.strokeRect(canvasWidth - anchoMueble, canvasHeight - anchoMueble - anchoSec3 - (i * anchoSec3), anchoMueble, anchoSec3);
-                        contSecMod.fillText(String(i + 1 + parseInt(canvasNumSec1) + parseInt(canvasNumSec2)), anchoMueble / 2 - 6 + (canvasWidth - anchoMueble), anchoSec3 / 2 + (canvasHeight - anchoMueble - anchoSec3 - (i * anchoSec3)));
-                    }
-                }
-
+                modulosTotales = parseInt(canvasNumSec1) + parseInt(canvasNumSec2) + parseInt(canvasNumSec3);
+                actualizarDivisionesSecciones();
                 document.getElementById("canvasModuloSec").getContext("2d").putImageData(contSecMod.getImageData(0, 0, 250, 250), 0, 0);
                 generarEspacios(tipo, [canvasNumSec1, canvasNumSec2, canvasNumSec3]);
+                if (modulosTotales < 3) $('#panelDivisionesModulos').hide();
+                else $('#panelDivisionesModulos').show();
+                actualizarModulosEstufaLavaplatos();
 
             };
 
@@ -317,14 +432,13 @@
 
                     for (var j = index; j < parseInt(numEspacios[i]) + index; j++) {
                         plantilla +=
-                                '       <div class="col-xs-12 col-sm-6">' +
+                                '       <div class="col-xs-12 col-sm-6" id="modulo' + (j + 1) + '">' +
                                 '           <fieldset>' +
                                 '               <legend>Modulo ' + (j + 1) + '</legend>' +
                                 '               <div class="row">' +
                                 '                   <div class="col-xs-6">' +
                                 '                      <label>Superiores</label>' +
-                                '                    <select class="form-control" name="secciones['+(i + 1)+'][modulo_' + (j + 1) + '_sup]">' +
-                                '                          <option value="">#Div Sup</option>' +
+                                '                    <select class="form-control" name="secciones[' + (i + 1) + '][modulo_' + (j + 1) + '_sup]">' +
                                 '                        <option value="2">2</option>' +
                                 '                        <option value="3">3</option>' +
                                 '                           <option value="4">4</option>' +
@@ -332,8 +446,7 @@
                                 '                </div>' +
                                 '                   <div class="col-xs-6">' +
                                 '                    <label>Inferiores</label>' +
-                                '                    <select class="form-control" name="secciones['+(i + 1)+'][modulo_' + (j + 1) + '_inf]">' +
-                                '                          <option value="">#Div Inf</option>' +
+                                '                    <select class="form-control" name="secciones[' + (i + 1) + '][modulo_' + (j + 1) + '_inf]">' +
                                 '                         <option value="2">2</option>' +
                                 '                         <option value="3">3</option>' +
                                 '                         <option value="4">4</option>' +
@@ -354,10 +467,11 @@
             return {
                 aparecer: aparecer,
                 cambioCanvasSec: cambioCanvasSec,
+                actualizarModulosEstufaLavaplatos: actualizarModulosEstufaLavaplatos,
                 cambioCanvasSecModulos: cambioCanvasSecModulos
             };
-        })(jQuery);
-
+        })
+        (jQuery);
 
     </script>
 @endsection

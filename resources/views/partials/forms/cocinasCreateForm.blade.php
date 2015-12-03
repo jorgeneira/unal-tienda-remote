@@ -22,7 +22,7 @@
             <div class="col-xs-12 col-sm-10 center-block" style="float:none;">
                 <form class="form-horizontal" role="form" action="" method="POST">
                     {!! csrf_field() !!}
-                    <!-- Informacion del cliente -->
+                            <!-- Informacion del cliente -->
 
                     <fieldset>
                         <legend>Información del Cliente:</legend>
@@ -30,6 +30,7 @@
                             <div class="col-xs-12 col-md-6 center-block" style="float: none;">
                                 <div class="form-group">
                                     <label for="nombre" class="col-xs-12 col-sm-6 col-md-4 control-label">Nombre</label>
+
                                     <div class="col-xs-12 col-sm-6 col-md-8">
                                         <input id="nombre" class="form-control" type="text" name="cliente[nombre]"
                                                required>
@@ -37,6 +38,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="ciudad" class="col-xs-12 col-sm-6 col-md-4 control-label">Ciudad</label>
+
                                     <div class="col-xs-12 col-sm-6 col-md-8">
                                         <input id="ciudad" class="form-control" type="text" name="cliente[ciudad]"
                                                required>
@@ -44,6 +46,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-xs-12 col-sm-6 col-md-4 control-label">E-Mail</label>
+
                                     <div class="col-xs-12 col-sm-6 col-md-8">
                                         <input id="email" class="form-control" type="text" name="cliente[email]"
                                                required>
@@ -52,6 +55,7 @@
                                 <div class="form-group">
                                     <label for="ciudad"
                                            class="col-xs-12 col-sm-6 col-md-4 control-label">Compañía</label>
+
                                     <div class="col-xs-12 col-sm-6 col-md-8">
                                         <input id="ciudad" class="form-control" type="text" name="cliente[compania]"
                                                required>
@@ -180,6 +184,7 @@
                                                     <img class="img-responsive" src="/img/cocina/estufa4.jpg">
 
                                                     <h2 id="est4p">4 puestos</h2>
+
                                                     <div class="overlay">
                                                         <h2>4 puestos</h2>
                                                         <a class="btn btn-primary info">Seleccionar</a>
@@ -287,6 +292,7 @@
                     <fieldset>
                         <legend>Módulos</legend>
                         <br>
+
                         <div class="row">
                             <div class="col-xs-12">
                                 <p>Utiliza los controles para seleccionar cuantos modulos deseas, en las imagenes puedes
@@ -323,6 +329,7 @@
                     <fieldset style="color: #DBDBDB">
                         <legend>Posición de los Accesorios</legend>
                         <br>
+
                         <div class="row">
                             <div class="text-center col-xs-12 col-sm-6 col-md-4">
                                 <canvas id="canvasModuloSec" width="250px" height="250px"
@@ -351,10 +358,12 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <label for="moduloEstufa">Módulo:</label>
-                                                    <input type="hidden" name="pedido[seccion_estufa]" id="seccionEstufa" />
+                                                    <input type="hidden" name="pedido[seccion_estufa]"
+                                                           id="seccionEstufa"/>
 
                                                     <select name="pedido[modulo_estufa]" id="moduloEstufa"
-                                                            class="form-control">
+                                                            class="form-control"
+                                                            onchange="cocinaFormCtrl.actualizarModulosEstufaLavaplatos(1)">
                                                         <option value="1"># 1</option>
                                                     </select>
                                                 </div>
@@ -368,10 +377,12 @@
 
                                                 <div class="col-sm-12">
                                                     <label for="moduloLavaplatos">Módulo:</label>
-                                                    <input type="hidden" name="pedido[seccion_lavaplatos]" id="seccionLavaplatos" />
+                                                    <input type="hidden" name="pedido[seccion_lavaplatos]"
+                                                           id="seccionLavaplatos"/>
 
                                                     <select name="pedido[modulo_lavaplatos]" id="moduloLavaplatos"
-                                                            class="form-control">
+                                                            class="form-control"
+                                                            onchange="cocinaFormCtrl.actualizarModulosEstufaLavaplatos(2)">
                                                         <option value="1"># 1</option>
                                                     </select>
                                                 </div>
@@ -383,7 +394,10 @@
                         </div>
                         <br>
                     </fieldset>
-                    <fieldset>
+
+                    <!-- Divisiones de los módulos -->
+
+                    <fieldset id="panelDivisionesModulos">
                         <legend>Divisiones de los Módulos</legend>
 
                         <div class="row">
@@ -397,13 +411,14 @@
                     <fieldset class="cocinaSelector">
                         <legend>Detalles de los Accesorios</legend>
                         <br>
+
                         <div class="row">
 
                             <div class="col-xs-12 col-sm-6">
                                 <fieldset>
                                     <legend>Manijas</legend>
                                     <div class="row">
-                                        <div class="text-center col-xs-6">
+                                        <div class="text-center col-xs-6 col-sm-12 col-md-6">
                                             <label>
                                                 <div class="hovereffect">
                                                     <input id="manijaTipo1" type="radio" name="pedido[manija]"
