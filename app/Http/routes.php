@@ -32,4 +32,14 @@ Route::group(['prefix' => 'api'], function(){
 
 	Route::post('cold-room-requests','CuartosController@apiUpdate');
 
+
+
+	Route::get('providers/kitchen','ProvidersController@getKitchensProviders');
+
+	Route::get('kitchen-requests/{requestID}','CocinasController@apiShow');
+
+	Route::get('kitchen-requests','CocinasController@apiIndex');
+
+	Route::post('kitchen-requests','CocinasController@apiUpdate');
+
 });

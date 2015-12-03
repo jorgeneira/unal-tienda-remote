@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateColdRoomProvidersTable extends Migration
+class CreateStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,13 @@ class CreateColdRoomProvidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('cold_room_providers', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('email');
+            $table->string('descripcion');
+            $table->string('marca');
+            $table->string('referencia');
+            $table->decimal('precio');
+            $table->timestamps();
         });
     }
 
@@ -26,7 +29,6 @@ class CreateColdRoomProvidersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cold_room_providers');
-        \DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        Schema::drop('stocks');
     }
 }

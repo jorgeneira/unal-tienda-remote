@@ -12,9 +12,12 @@ class CreateKitchenRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('kitchen_requests', function (Blueprint $table) {
             
             $table->increments('id');
+
+            $table->integer('client_id', false, true);
+
             $table->decimal('ancho');
             $table->decimal('largo');
             $table->decimal('alto');
@@ -25,27 +28,32 @@ class CreateKitchenRequestsTable extends Migration
             $table->integer('tipo_lavaplatos',false,true);
 
             $table->boolean('extractor');
-            $table->integer('modulos_seccion1');
-            $table->integer('modulos_seccion2');
-            $table->integer('modulos_seccion3');
 
-            $table->integer('modulos_estufa')->nullable();
-            $table->integer('modulos_lavaplatos')->nullable();
+            $table->integer('modulos_seccion_1');
+            $table->integer('modulos_seccion_2');
+            $table->integer('modulos_seccion_3');
 
 
-            $table->string('material');
-            $table->integer('color');
+            $table->integer('seccion_estufa')->nullable();
+            $table->integer('seccion_lavaplatos')->nullable();
+
+            $table->integer('modulo_estufa')->nullable();
+            $table->integer('modulo_lavaplatos')->nullable();
+
+
             $table->integer('manija');
+            $table->string('material');
             $table->integer('meson');
-                        
-            $table->foreign('estatura')->references('id')->on('person_heights'); 
-            $table->foreign('tipo_estufa')->references('id')->on('stoves'); 
-            $table->foreign('tipo_lavaplatos')->references('id')->on('sinks');
-            $table->foreign('material')->references('id')->on('materials');  
-            $table->foreign('color')->references('id')->on('colors'); 
-            $table->foreign('manija')->references('id')->on('knockers');
-            $table->foreign('mesos')->references('id')->on('tables');        
+            $table->integer('color');
+
+            $table->json('secciones')->nullable();
+
+            $table->boolean('leido')->default(0);
+
             $table->timestamps();
+
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+
         });
     }
 
@@ -56,6 +64,6 @@ class CreateKitchenRequestsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('kitchen_requests');
     }
 }

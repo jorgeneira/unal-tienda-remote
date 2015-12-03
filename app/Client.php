@@ -19,5 +19,11 @@ class Client extends Model {
 
 	}
 
+	public function kitchenRequests() {
+
+		return $this->hasMany(KitchenRequest::class);
+
+	}
+
 
 }
