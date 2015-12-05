@@ -34,7 +34,7 @@ Route::group(['prefix' => 'api'], function(){
 
 
 
-	Route::get('providers/kitchen','ProvidersController@getKitchensProviders');
+	Route::post('providers/kitchen','ProvidersController@getKitchensProviders');
 
 	Route::get('kitchen-requests/{requestID}','CocinasController@apiShow');
 

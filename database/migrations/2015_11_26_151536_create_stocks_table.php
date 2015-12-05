@@ -18,7 +18,7 @@ class CreateStocksTable extends Migration
             $table->string('marca');
             $table->string('referencia');
             $table->decimal('precio');
-            $table->timestamps();
+            $table->string('email');
         });
     }
 

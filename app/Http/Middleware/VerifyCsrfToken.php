@@ -14,5 +14,6 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         'api/cold-room-requests',
         'api/kitchen-requests',
+        'api/providers/kitchen',
     ];
 }

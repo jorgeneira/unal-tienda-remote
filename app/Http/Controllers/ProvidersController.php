@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ColdRoomProvider;
-use App\Http\Requests;
+use App\Stock;
+use Illuminate\Http\Request;
 
 class ProvidersController extends Controller {
 
@@ -13,9 +14,11 @@ class ProvidersController extends Controller {
 
     }
 
-    public function getKitchensProviders() {
+    public function getKitchensProviders(Request $request) {
 
+        $productos = $request->input('productos');
 
+        return Stock::whereIn('referencia', $productos)->get()->keyBy('referencia');
 
     }
 
